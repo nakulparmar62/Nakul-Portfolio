@@ -84,7 +84,7 @@ img{max-width:100%;display:block;}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
 
 .wrap{max-width:1280px;margin:0 auto;padding:0 32px;}
-section{position:relative;padding:160px 0;}
+section{position:relative;padding:60px 0;}
 @media(max-width:900px){section{padding:100px 0;} .wrap{padding:0 22px;}}
 
 .eyebrow{
@@ -526,7 +526,7 @@ footer{border-top:1px solid var(--border-soft);padding:60px 0 32px;}
       </div>
       <p class="hero-sub">I design and build production-grade, offline-first mobile applications — from fintech and government platforms to AI-powered consumer apps. 4+ years turning complex requirements into fast, reliable Flutter experiences.</p>
       <div class="hero-buttons">
-        <a href="#" class="btn btn-primary" id="resumeBtn">Download Resume</a>
+        <a href="https://drive.google.com/file/d/1evJ1GHGLlLwaGrQ4znkvtP_pwwMVTQad/view?usp=sharing" class="btn btn-primary" id="resumeBtn">Download Resume</a>
         <a href="#contact" class="btn btn-ghost">Hire Me</a>
         <a href="#contact" class="btn btn-ghost">Contact</a>
       </div>
@@ -770,7 +770,8 @@ footer{border-top:1px solid var(--border-soft);padding:60px 0 32px;}
         <div class="logo">Nakul<span class="dot">.</span>dev</div>
         <p>Flutter Developer &amp; Mobile Architect building reliable, offline-first apps for fintech, government and enterprise clients.</p>
       </div>
-      <div class="footer-links">
+      <div class="foo
+      ter-links">
         <div class="footer-col">
           <h5>Navigate</h5>
           <a href="#work">Work</a><a href="#about">About</a><a href="#stack">Stack</a><a href="#experience">Experience</a>
@@ -1118,11 +1119,17 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
 });
 
 /* ============ RESUME BUTTON (placeholder) ============ */
-['resumeBtn','footerResume'].forEach(id=>{
-  document.getElementById(id).addEventListener('click', (e)=>{
-    e.preventDefault();
-    alert('Add your resume PDF link here to enable downloads.');
-  });
+const resumeLink = "https://drive.google.com/file/d/1evJ1GHGLlLwaGrQ4znkvtP_pwwMVTQad/preview";
+
+['resumeBtn', 'footerResume'].forEach(id => {
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open(resumeLink, '_blank');
+    });
+  }
 });
 
 /* ============ EASTER EGG: type "flutter" ============ */
